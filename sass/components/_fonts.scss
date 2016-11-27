@@ -1,0 +1,17 @@
+/* ===================== 
+Start: Connect fonts      
+======================== */
+@include connect-font(ProximaRegular,regular);
+//@include connect-font(Verdana,ver_regular, ttf);
+@include connect-font(ProximaBold,bold);
+@include connect-font(ProximaBoldCond,bold_cond);
+@include connect-font(ProximaLight,light);
+@include connect-font(ProximaBlack,black_font);
+.verdana{
+	&-bold{
+		font-weight: 700;
+	}
+}
+/* =====================
+End:  Connect fonts
+======================== */

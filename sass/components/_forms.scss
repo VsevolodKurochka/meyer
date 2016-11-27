@@ -1,0 +1,59 @@
+.vform{
+  width: 100%;
+  @extend .center-block;
+  input,
+  textarea{
+    border: none;
+    @include borderR(5px);
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    color: #616161;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    @extend .block-inline;
+    @extend .regular;
+    @extend .transition;
+  }
+  textarea{
+    resize: none;
+  }
+  &-row{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &-small{
+    input{
+      border: 1px solid setColor(black, light);
+      margin-bottom: 15px;
+    }
+  }
+  // .vbtn{
+  //   width: 100%;
+  // }
+  @include resp-max(sm){
+    &-big{
+      margin-bottom: 60px;
+    }
+  }
+  @include resp-max(md){
+    padding-left: 15px;
+    padding-right: 15px;
+    &-big{
+      input,textarea{
+        margin-bottom: 15px;
+      }
+    }
+  }
+  @include resp-min(sm){
+    &-big{
+      width: 750px;
+      margin-bottom: 135px;
+    }
+    &-big &-row{
+      margin-bottom: 25px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.list{
+  li{
+    @extend .relative;
+    &:after{
+      @extend .pseudo;
+      top: 0;
+    }
+  }
+
+  &-circle{
+    li{
+      padding-left: 10px;
+      &:after{
+        top: 10px;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        background-color: #d2d2d2;
+        @include borderR(100%);
+      }
+    }
+  }
+  // @include resp-max(sm){
+  //   text-align: center;
+
+  // }
+  // @include resp-min(sm){
+  //   &:after{
+  //     left: 0;
+  //   }
+  // }
+}

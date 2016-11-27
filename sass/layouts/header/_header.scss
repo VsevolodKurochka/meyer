@@ -1,0 +1,55 @@
+.header {
+	@extend .cf;
+	&.has-slider{
+		img{
+		  width: 100%;
+		}
+	}
+	&-text{
+		color: #fff;
+	}
+	@include resp-max(sm){
+		@include bg("img/bg1.jpg");
+		padding: 30px 15px;
+		@at-root{
+			.slider-wrapper{
+  			display: none;
+			}
+		}
+	}
+	@include resp-min(sm){
+		&-text{
+			position: absolute;
+		  top: 50px;
+		  left: 50%;
+		  margin-left: -25%;
+		  max-width: 50%;
+		}
+		&.has-slider{
+			img{
+				height: 300px;
+			}
+		}
+	}
+	@include resp-min(md){
+		&-text{
+		  top: 140px;
+		}
+		&.has-slider{
+			img{
+			  height: 500px;
+			}
+		}
+	}
+	@include resp-min(lg){
+		&-text{
+			max-width: 750px;
+			margin-left: -375px;
+		}
+		&.has-slider{
+			img{
+			  height: 758px;
+			}
+		}
+	}
+}
