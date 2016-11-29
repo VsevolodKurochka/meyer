@@ -404,6 +404,10 @@
       right: 0;
       width: 453px;
     }
+    &-row:last-child &-block{
+      top: auto;
+      bottom: 10px;
+    }
     &-row:nth-child(3) &-block{
       top: -140px;
     }
@@ -446,6 +450,9 @@
   @include resp-max(sm){
     &-wrap{
       padding-bottom: 0;
+      &-inner{
+        margin-top: 60px;
+      }
     }
     &-block{
       &-wrap{
@@ -457,6 +464,11 @@
     }
   }
   @include resp-min(sm){
+    &-wrap{
+      &-inner{
+        margin-top: 150px;
+      }
+    }
     &-title{
       margin-bottom: 20px;
     }
@@ -476,49 +488,218 @@
     }
   }
 }
+%white-bg{
+  background-color: rgba(255, 255, 255, 0.66);
+}
+%image-full{
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 .loop{
-  &-block{
-    position: relative;
-    float: left;
-    width: 100%;
-    text-align: center;
-    &.even{
-      color: setColor(light);
-      background-color: #00ff16;
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  &.view-0 &-image, &.view-3 &-image{
+    &:after{
+      background-color: rgba(128, 128, 128, 0.65);
     }
-    &.odd{
-      background-color: #f00;
-      color: setColor(black);
+  }
+  
+  &.view-1 &-image, &.view-2 &-image{
+    &:after{
+      @extend %white-bg;
+    }
+  }
+  @at-root{
+    %loop-c{
+      &-b{
+        color: setColor(black);
+      }
+      &-l{
+        color: setColor(light);
+      }
+    }
+  }
+  &.view-0, &.view-3{
+    @extend %loop-c-l;
+    &:hover{
+      @extend %loop-c-b;
+    }
+  }
+  &.view-1, &.view-2{
+    @extend %loop-c-b;
+    &:hover{
+      @extend %loop-c-l;
+    }
+  }
+  &.view{
+    @extend .line;
+    @extend .transition;
+    &:before{
+      @extend .pseudo;
+      @extend .transition;
+      @extend %image-full;
+    }
+    &:after{
+      z-index: -1;
+      @extend .transition;
+    }
+    &:hover{
+      &:after{
+        height: 100%;
+      }
+    }
+  }
+  &.view-0{
+    @extend .line-red;
+    &:before{
+      background-image: -webkit-linear-gradient(bottom, rgba(252,95,69,.29), rgba(0,0,0,0));
+      background-image: -moz-linear-gradient(bottom, rgba(252,95,69,.29), rgba(0,0,0,0));
+      background-image: -o-linear-gradient(bottom, rgba(252,95,69,.29), rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(bottom, rgba(252,95,69,.29), rgba(0,0,0,0));
+      background-image: linear-gradient(to top, rgba(252,95,69,.29), rgba(0,0,0,0));
+    }
+    // &:hover{
+    //   &:before{
+    //     background-image: -webkit-linear-gradient(bottom, rgba(252,95,69,0.5), rgba(0,0,0,0));
+    //     background-image: -moz-linear-gradient(bottom, rgba(252,95,69,0.5), rgba(0,0,0,0));
+    //     background-image: -o-linear-gradient(bottom, rgba(252,95,69,0.5), rgba(0,0,0,0));
+    //     background-image: -ms-linear-gradient(bottom, rgba(252,95,69,0.5), rgba(0,0,0,0));
+    //     background-image: linear-gradient(to top, rgba(252,95,69,0.5), rgba(0,0,0,0));
+    //   }
+    // }
+  }
+  &.view-1{
+    @extend .line-green;
+    &:before{
+      background-image: -webkit-linear-gradient(bottom, rgba(56,198,149,.29), rgba(0,0,0,0));
+      background-image: -moz-linear-gradient(bottom, rgba(56,198,149,.29), rgba(0,0,0,0));
+      background-image: -o-linear-gradient(bottom, rgba(56,198,149,.29), rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(bottom, rgba(56,198,149,.29), rgba(0,0,0,0));
+      background-image: linear-gradient(to top, rgba(56,198,149,.29), rgba(0,0,0,0));
+    }
+    // &:hover{
+    //   &:before{
+    //     background-image: -webkit-linear-gradient(bottom, rgba(56,198,149,0.5), rgba(0,0,0,0));
+    //     background-image: -moz-linear-gradient(bottom, rgba(56,198,149,0.5), rgba(0,0,0,0));
+    //     background-image: -o-linear-gradient(bottom, rgba(56,198,149,0.5), rgba(0,0,0,0));
+    //     background-image: -ms-linear-gradient(bottom, rgba(56,198,149,0.5), rgba(0,0,0,0));
+    //     background-image: linear-gradient(to top, rgba(56,198,149,0.5), rgba(0,0,0,0));        
+    //   }
+    // }
+  }
+  &.view-2{
+    @extend .line-purple;
+    &:before{
+      background-image: -webkit-linear-gradient(bottom, rgba(178,124,245,.18), rgba(0,0,0,0));
+      background-image: -moz-linear-gradient(bottom, rgba(178,124,245,.18), rgba(0,0,0,0));
+      background-image: -o-linear-gradient(bottom, rgba(178,124,245,.18), rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(bottom, rgba(178,124,245,.18), rgba(0,0,0,0));
+      background-image: linear-gradient(to top, rgba(178,124,245,.18), rgba(0,0,0,0));
+    }
+  }
+  &.view-3{
+    @extend .line-orange;
+    &:before{
+      background-image: -webkit-linear-gradient(bottom, rgba(254,185,96,.48), rgba(0,0,0,0));
+      background-image: -moz-linear-gradient(bottom, rgba(254,185,96,.48), rgba(0,0,0,0));
+      background-image: -o-linear-gradient(bottom, rgba(254,185,96,.48), rgba(0,0,0,0));
+      background-image: -ms-linear-gradient(bottom, rgba(254,185,96,.48), rgba(0,0,0,0));
+      background-image: linear-gradient(to top, rgba(254,185,96,.48), rgba(0,0,0,0));
     }
   }
   &-title{
     display: block;
-    @extend .bold_cond;
-    
+    overflow: hidden;
+    line-height: 1;
+    @extend .bold_cond;  
   }
   &-descr{
     display: block;
-    max-height: 217px;
     overflow: hidden;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
+    line-height: 1.2;
   }
   &-link{
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
     @extend .tdn;
     color: inherit;
   }
-  @include resp-min(lg){
-    &-block{
-      width: 50%;
-      min-height: 560px;
-      
+  &-image{
+    position: absolute;
+    @extend %image-full;
+    z-index: -1;
+    img{
+      position: relative;
+      z-index: 1;
+      max-width: none;
     }
+    &:after{
+      @extend .pseudo;
+      @extend %image-full;
+      z-index: 2;
+    }
+  }
+  @include resp-max(xs){
+    &-link{
+      padding-top: 45px;
+      padding-bottom: 45px;
+    }
+    &-title{
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+  @include resp-max(lg){
+    &-image{
+      img{
+        width: 100%;
+      }
+    }
+    @include resp-min(xs){
+      &-link{
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      &-title{
+        font-size: 45px;
+        margin-bottom: 25px;
+      }
+      &-descr{
+        font-size: 25px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    width: 50%;
+    &-link{
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    &-title{
+      font-size: 50px;
+      margin-bottom: 50px;
+      height: 54px;
+    }
+    &-descr{
+      font-size: 25px;
+      height: 125px;
+    }
+  }
+  @media (min-width: 1500px){
+    min-height: 560px;
     &-link{
       padding-top: 120px;
       padding-bottom: 120px;
@@ -526,11 +707,84 @@
     &-title{
       font-size: 72px;
       margin-bottom: 70px;
-      height: 100px;
-      overflow: hidden;
+      height: 70px; 
     }
     &-descr{
       font-size: 37px;
+      height: 180px;
+    }    
+  }
+}
+
+.entry{
+  &-header{
+    z-index: 1;
+    margin-bottom: 30px;
+    @extend .relative;
+    &-thumb{
+      position: absolute;
+      z-index: -1;
+      @extend %image-full;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      &:after{
+        @extend .pseudo;
+        @extend %image-full;
+        @extend %white-bg;
+      }
+    }
+  }
+  &-title{
+    @extend .ttu;
+    @extend .text-center;
+    @extend .bold_cond;
+    line-height: 1.2;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+  }
+  &-content{
+    font-size: 16px;
+    color: #616161;
+    padding-bottom: 100px;
+    p{
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    img{
+      border: 10px solid #cccccc;
+    }
+  }
+  @include resp-max(lg){
+    &-header{
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    @include resp-min(xs){
+      &-title{
+        font-size: 50px;
+      }
+    }
+  }
+  @include resp-min(lg){
+    &-header{
+      padding-top: 150px;
+      padding-bottom: 150px;
+      margin-bottom: 45px;
+    }
+    &-title{
+      font-size: 60px;
+    }
+  }
+  @media (min-width: 1500px){
+    &-header{
+      min-height: 760px;
+      padding-top: 150px;
+      margin-bottom: 90px;
     }
   }
 }

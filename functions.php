@@ -95,6 +95,15 @@ function meyer_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'LanguageSwitcher', 'meyer' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'meyer' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'meyer_widgets_init' );
 
@@ -105,6 +114,7 @@ function meyer_scripts() {
 	wp_enqueue_style( 'meyer-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'meyer-min', get_template_directory_uri() . '/js/min.scripts.js', array(), '20151215', true );
+wp_enqueue_script( 'meyer-wowinit', get_template_directory_uri() . '/js/wowinit.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'meyer-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 
@@ -166,3 +176,5 @@ add_filter('excerpt_more', function($more) {
  * Load Jetpack compatibility file.
  */
 //require get_template_directory() . '/inc/jetpack.php';
+
+require get_template_directory() . '/tgm/plugin-connect.php';

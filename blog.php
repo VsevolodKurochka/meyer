@@ -11,12 +11,15 @@ Template Name: blog_page
 		));
 		if ( $blog_query->have_posts() ) : 
 			while( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
-			<div class="loop-block <?php echo (++$j % 2 == 0) ? 'even' : 'odd'; ?>">
+			<article id="post-<?php the_ID(); ?>" class="loop view view-<?php echo ($xyz++%4); ?>">
 				<a href="<?php the_permalink(); ?>" class="loop-link">
 					<h3 class="loop-title"><?php the_title(); ?></h3>
 					<h4 class="loop-descr"><?php echo excerpt(16); ?></h4>
+					<div class="loop-image">
+						<?php the_post_thumbnail(); ?>
+					</div>
 				</a>
-			</div>
+			</article>
 	<?php endwhile; else: ?>
 		<p>Sorry, we haven't posts!</p>
 	<?php endif; ?>

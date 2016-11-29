@@ -1,9 +1,9 @@
 .vform{
   width: 100%;
   @extend .center-block;
-  input,
+  input:not([type="submit"]),
   textarea{
-    border: none;
+    border: 1px solid transparent;
     @include borderR(5px);
     width: 100%;
     max-width: 100%;
@@ -15,6 +15,15 @@
     @extend .block-inline;
     @extend .regular;
     @extend .transition;
+    &.wpcf7-not-valid{
+      border-color: #f00;
+    }
+  }
+  input[type="submit"]{
+    cursor: pointer;
+    &:hover{
+      background-color: lighten(setColor(corp), 15%);
+    }
   }
   textarea{
     resize: none;
@@ -33,9 +42,24 @@
   // .vbtn{
   //   width: 100%;
   // }
-  @include resp-max(sm){
-    &-big{
-      margin-bottom: 60px;
+  &-big{
+    .wpcf7-response-output{
+      margin: 30px 0 0 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      text-align: center;
+      color: #fff;
+      padding: 15px 0;
+    }
+    .wpcf7-not-valid-tip {
+      color: #f00;
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      font-size: 14px;
     }
   }
   @include resp-max(md){
@@ -50,10 +74,16 @@
   @include resp-min(sm){
     &-big{
       width: 750px;
-      margin-bottom: 135px;
     }
     &-big &-row{
       margin-bottom: 25px;
     }
   }
+}
+
+.wpcf7-form-control-wrap{
+  display: block;
+}
+.wpcf7-validation-errors{
+  background-color: rgba(255, 0, 10, 0.3);
 }

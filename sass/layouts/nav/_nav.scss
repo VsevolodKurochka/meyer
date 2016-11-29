@@ -52,7 +52,8 @@
 		}
 		&-share{
 			text-align: right;
-  		padding: 15px;
+  		padding: 7.5px 15px;
+  		float: left;
   		&-inner{
   			margin-right: 7.5px;
   			&:last-child{
@@ -216,4 +217,37 @@
 			}
 		}
 	}
+}
+.language-switcher {
+  li{
+  	padding: 0 3px;
+  	a{
+  		&:after{
+  			display: none;
+  		}
+  	}
+  }
+  @extend .regular;
+  .current-lang{
+  	@extend .bold_cond;
+  }
+  @include resp-min(md){
+  	position: absolute;
+	  right: 15px;
+	  top: 0;
+	  font-size: 26px;
+	  color: #5d0e11;
+  }
+  @include resp-max(md){
+	  float: right;
+	  padding-right: 15px;
+  	li{
+  		display: inline-block;
+  		a{
+	  		padding: 5px 10px;
+	  		margin-bottom: 0;
+	  	}
+  	}
+
+  }
 }

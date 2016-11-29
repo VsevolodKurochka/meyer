@@ -15,7 +15,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-
 <?php wp_head(); ?>
 </head>
 
@@ -41,6 +40,11 @@
 							<div class="vnav-share-inner"><a href="#"><img src="<?php echo get_template_directory_uri();?>/img/share-fb.png" alt=""></a></div>
 							<div class="vnav-share-inner"><a href="#"><img src="<?php echo get_template_directory_uri();?>/img/share-link.png" alt=""></a></div>
 						</div>
+						<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+							<div class="language-switcher">
+								<?php dynamic_sidebar( 'sidebar-2' ); ?>
+							</div>
+						<?php endif; ?>
 					</div>
 				</div><!-- vnav-inner -->
 			</div><!-- .vrow -->
