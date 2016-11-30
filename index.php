@@ -41,7 +41,7 @@ get_header(); ?>
 				</div>
 				<div class="cf color-grey">
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 feature-wrap wow fadeInUp">
-						<div class="feature line line-red">
+						<div class="feature line">
 							<div class="feature-header"><img src="<?php echo get_template_directory_uri();?>/img/feat1.png" alt=""></div>
 							<div class="feature-body">
 								<p><?php pll_e('С «душой» предоставляем услуги сопровождения инностанцев в Украине, как будто Вы приехали  к своему другу'); ?></p>
@@ -49,7 +49,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 feature-wrap wow fadeInUp" data-wow-delay="0.2s">
-						<div class="feature line line-green">
+						<div class="feature line">
 							<div class="feature-header"><img src="<?php echo get_template_directory_uri();?>/img/feat2.png" alt=""></div>
 							<div class="feature-body">
 								<p><?php pll_e('Помогаем разобраться в абсолютно всех  сложных документарных вопросах в Украине'); ?></p>
@@ -57,7 +57,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 feature-wrap wow fadeInUp" data-wow-delay="0.3s">
-						<div class="feature line line-purple">
+						<div class="feature line">
 							<div class="feature-header"><img src="<?php echo get_template_directory_uri();?>/img/feat3.png" alt=""></div>
 							<div class="feature-body">
 								<p><?php pll_e('Советуем только лучшее  в плане провождения досуга, выборе отеля делаем все «как для себя»'); ?></p>
@@ -65,7 +65,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 feature-wrap wow fadeInUp" data-wow-delay="0.4s">
-						<div class="feature line line-orange">
+						<div class="feature line">
 							<div class="feature-header"><img src="<?php echo get_template_directory_uri();?>/img/feat4.png" alt=""></div>
 							<div class="feature-body">
 								<p><?php pll_e('Весело, быстро и вовремя решаем все Ваши вопросы'); ?></p>
@@ -103,10 +103,7 @@ get_header(); ?>
 							<p><span class="verdana-bold">Linkedin</span> - </p>
 						</div>
 						<div class="line-wrapper-all">
-							<div class="line line-red"></div>
-							<div class="line line-green"></div>
-							<div class="line line-purple"></div>
-							<div class="line line-orange"></div>
+							<div class="line"></div>
 						</div>
 					</div>
 				</div>
@@ -148,7 +145,7 @@ get_header(); ?>
 				<div class="cf service-wrap">
 					<div class="service-row">
 						<div class="service-image"><img src="<?php echo get_template_directory_uri();?>/img/service1.png" alt=""></div>
-						<div class="service-block line line-red wow fadeInUp" data-wow-delay="0.1s">
+						<div class="service-block line wow fadeInUp" data-wow-delay="0.1s">
 							<div class="service-number">
 								<div class="service-number-inner">01</div>
 							</div>
@@ -165,7 +162,7 @@ get_header(); ?>
 					</div>
 					<div class="service-row">
 						<div class="service-image"><img src="<?php echo get_template_directory_uri();?>/img/service2.png" alt=""></div>
-						<div class="service-block line line-green wow fadeInUp" data-wow-delay="0.2s">
+						<div class="service-block line wow fadeInUp" data-wow-delay="0.2s">
 							<div class="service-number">
 								<div class="service-number-inner">02</div>
 							</div>
@@ -178,7 +175,7 @@ get_header(); ?>
 					</div>
 					<div class="service-row">
 						<div class="service-image"><img src="<?php echo get_template_directory_uri();?>/img/service3.png" alt=""></div>
-						<div class="service-block line line-purple wow fadeInUp" data-wow-delay="0.3s">
+						<div class="service-block line wow fadeInUp" data-wow-delay="0.3s">
 							<div class="service-number">
 								<div class="service-number-inner">03</div>
 							</div>
@@ -199,7 +196,7 @@ get_header(); ?>
 					</div>
 					<div class="service-row">
 						<div class="service-image"><img src="<?php echo get_template_directory_uri();?>/img/service4.png" alt=""></div>
-						<div class="service-block line line-orange wow fadeInUp" data-wow-delay="0.4s">
+						<div class="service-block line wow fadeInUp" data-wow-delay="0.4s">
 							<div class="service-number">
 								<div class="service-number-inner">04</div>
 							</div>
@@ -240,19 +237,19 @@ get_header(); ?>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 contact-block-wrap">
 						<div class="contact-block">
-							<p class="contact-title color-green">Телефон, Viber</p>
+							<p class="contact-title">Телефон, Viber</p>
 							<a href="telto: +380734038134">+380734038134</a>
 						</div>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 contact-block-wrap">
 						<div class="contact-block">
-							<p class="contact-title color-purple">E-mail</p>
+							<p class="contact-title">E-mail</p>
 							<a class="contact-email" href="mailto: irinakelowna@gmail.com">irinakelowna@gmail.com</a>
 						</div>
 					</div>
 					<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 contact-block-wrap">
 						<div class="contact-block contact-social-wrap text-md-right">
-							<p class="contact-title color-orange">Мы в соц. сетях</p>
+							<p class="contact-title">Мы в соц. сетях</p>
 							<div class="contact-social-inner">
 								<div class="contact-social"><a href="#"><img src="<?php echo get_template_directory_uri();?>/img/social-fb.png" alt=""></a></div>
 								<div class="contact-social"><a href="#"><img src="<?php echo get_template_directory_uri();?>/img/social-in.png" alt=""></a></div>
@@ -262,10 +259,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="line-wrapper-all">
-						<div class="line line-red"></div>
-						<div class="line line-green"></div>
-						<div class="line line-purple"></div>
-						<div class="line line-orange"></div>
+						<div class="line"></div>
 					</div>
 				</div>
 			</div>

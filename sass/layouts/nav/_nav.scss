@@ -118,7 +118,7 @@
 				  	margin: auto;
 				    width: 24px;
 				    height: 4px;
-				    background-color: setColor(light);
+				    background-color: setColor(black);
 				    @include borderR(2px);
 				   	@extend %vnav-transitionDef;
 			  	}
@@ -168,7 +168,7 @@
 		@include resp-max(md){
 			@at-root{
 				%vnav-resp{
-					background-color: setColor(red);
+					background-color: setColor(black, light);
 				}
 			}	
 			top: 0;
@@ -193,11 +193,11 @@
 		    li{
 		    	display: block;
 		    	a{
-		    		color: #fff;
+		    		color: setColor(corp);
 		    		display: block;
 		    		padding: 15px;
 		    		margin-bottom: 15px;
-		    		background-color: lighten(setColor(red), 5%);
+		    		background-color: darken(setColor(black, light), 5%);
 		    	}
 		    }
 			}
